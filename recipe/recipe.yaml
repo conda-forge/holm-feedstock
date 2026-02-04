@@ -26,7 +26,7 @@ requirements:
     - python >=${{ python_min }}
     - fastapi >=0.115.12
     - fasthx >=3.0.1
-    - htmy >=0.8.2
+    - htmy >=0.10.2
     - lxml >=6.0.0
     - python-multipart >=0.0.20
 
