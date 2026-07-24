@@ -1,7 +1,8 @@
 schema_version: 1
 
 context:
-  version: "0.9.0"
+  version: "0.10.0"
+  python_min: "3.11"
 
 package:
   name: holm
@@ -9,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/holm/holm-${{ version }}.tar.gz
-    sha256: 90601415261d2d8eb38bb69dff85fbe27b28292a756e42687732fa279766e87d
+    sha256: af5aa1a51d60f1da8bd0f85715df5c889723edf528113d0df4f8b19e16151adb
 
 build:
   number: 0
@@ -24,9 +25,11 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - fastapi >=0.115.12
-    - fasthx >=3.0.1
-    - htmy >=0.10.2
+    - fastapi >=0.135.0
+    - fasthx >=3.2.2
+    - htmy >=0.13.1
+    - jinja2 >=3.1.6
+    - markupsafe >=3.0.3
     - lxml >=6.0.0
     - python-multipart >=0.0.20
 
