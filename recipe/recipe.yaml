@@ -1,8 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.10.0"
-  python_min: "3.11"
+  version: "0.11.0"
 
 package:
   name: holm
@@ -10,13 +9,16 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/holm/holm-${{ version }}.tar.gz
-    sha256: af5aa1a51d60f1da8bd0f85715df5c889723edf528113d0df4f8b19e16151adb
+    sha256: cee008576dca1c6bbf74ad319334872447f7626efe71cf3d5d9028401336c0f8
 
 build:
   number: 0
   noarch: python
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - holm = holm.cli:app
 
 requirements:
   host:
@@ -32,13 +34,18 @@ requirements:
     - markupsafe >=3.0.3
     - lxml >=6.0.0
     - python-multipart >=0.0.20
+    - typer >=0.27.1
 
 tests:
   - python:
       imports:
         - holm
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+      - holm --help
 
 about:
   license: MIT
