@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.11.0"
+  version: "0.11.2"
 
 package:
   name: holm
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/h/holm/holm-${{ version }}.tar.gz
-    sha256: cee008576dca1c6bbf74ad319334872447f7626efe71cf3d5d9028401336c0f8
+    sha256: ccc20925300c6d7f4d20c8bf27e118ac912ef08d315745160ada5681ebb7f8bb
 
 build:
   number: 0
